@@ -85,6 +85,7 @@ describe('Language Endpoints', function () {
         .set('Authorization', helpers.makeAuthHeader(testUser))
         .expect(200)
         .expect(res => {
+          //console.log(res);
           expect(res.body).to.have.keys('language', 'words')
 
           expect(res.body.language).to.have.property('id', usersLanguage.id)
