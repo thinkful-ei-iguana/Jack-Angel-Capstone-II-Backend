@@ -2,6 +2,9 @@ const express = require('express')
 const LanguageService = require('./language-service')
 const { requireAuth } = require('../middleware/jwt-auth')
 
+
+
+
 const languageRouter = express.Router()
 
 languageRouter
@@ -50,6 +53,7 @@ languageRouter
         req.app.get('db'),
         req.language.head
       )
+      console.log('nextword is ', nextWord);
       res.status(200).json({
         totalScore: req.language.total_score,
         ...nextWord
