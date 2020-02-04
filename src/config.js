@@ -2,10 +2,10 @@ module.exports = {
   PORT: process.env.PORT || 8000,
   NODE_ENV: process.env.NODE_ENV || 'development',
   DB_URL: process.env.DB_URL
-    || 'postgresql://postgres@localhost/spaced-reps' ,
+    || 'postgresql://dunder-mifflin@localhost/spaced-repetition',
   JWT_SECRET: process.env.JWT_SECRET || 'change-this-secret',
   JWT_EXPIRY: process.env.JWT_EXPIRY || '3h',
 }
 
 
-//Jacks postgres link 'postgresql://dunder-mifflin@localhost/spaced-repetition'
+//Angel's postgres link 'postgresql://postgres@localhost/spaced-reps' 

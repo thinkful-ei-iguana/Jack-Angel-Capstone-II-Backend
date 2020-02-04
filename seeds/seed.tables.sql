@@ -21,13 +21,13 @@ VALUES
 
 INSERT INTO "word" ("id", "language_id", "original", "translation", "next")
 VALUES
-  (1, 1, 'Qué', 'What', 2),
-  (2, 1, 'Quién', 'Who', 3),
-  (3, 1, 'Dónde', 'Where', 4),
-  (4, 1, 'Por qué', 'Why', 5),
-  (5, 1, 'Cuál', 'Which', 6),
-  (6, 1, 'Cómo', 'How', 7),
-  (7, 1, 'Adiós', 'Goodbye', 8),
+  (1, 1, 'Que', 'What', 2),
+  (2, 1, 'Quien', 'Who', 3),
+  (3, 1, 'Donde', 'Where', 4),
+  (4, 1, 'Por que', 'Why', 5),
+  (5, 1, 'Cual', 'Which', 6),
+  (6, 1, 'Como', 'How', 7),
+  (7, 1, 'Adios', 'Goodbye', 8),
   (8, 1, 'Nunca ', 'Never', 9),
   (9, 1, 'Claro', 'Of course', 10),
   (10, 1,'Siempre', 'Always', null);
