@@ -1,3 +1,5 @@
+//const SLL = require('./SLL');
+
 const LanguageService = {
   getUsersLanguage(db, user_id) {
     return db
@@ -46,6 +48,42 @@ const LanguageService = {
       })
 
       
+  },
+
+  createSLL(db, SLL, head){
+    return db.from('word')
+      .then(res =>{
+        return res; 
+      })
+    
+  },
+
+  updateLang(db, id, score, head){
+    return db('language').where('id', id).update({
+      total_score: score,
+      head: head
+    })
+  },
+
+  updateMoved(db, id, nextNode, correct_count, incorrect_count, memory_value){
+    //return db.from('word').select('*')
+    let next = null;
+    if(nextNode !== null){
+      next = nextNode.value.id
+    }
+
+    return db('word').where({id: id}).update({
+      correct_count: correct_count,
+      incorrect_count: incorrect_count,
+      memory_value: memory_value,
+      next: next
+    }, ['correct_count', 'incorrect_count', 'translation']);
+  },
+
+  updatePrev(db, id, next){
+    return db('word').where('id', id).update({
+      next: next
+    })
   }
 }
 
