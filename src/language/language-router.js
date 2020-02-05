@@ -47,6 +47,7 @@ languageRouter
   })
 
 languageRouter
+  .use(requireAuth)
   .get('/head', async (req, res, next) => {
     try {
       const nextWord = await LanguageService.getNextWord (
@@ -66,6 +67,7 @@ languageRouter
   })
 
 languageRouter
+  .use(requireAuth)
   .post('/guess', async (req, res, next) => {
     // implement me
     res.send('implement me!')
