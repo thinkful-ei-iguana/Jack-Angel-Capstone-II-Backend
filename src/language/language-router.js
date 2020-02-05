@@ -112,12 +112,6 @@ languageRouter
       let temp = LL.head;
 
       const prevValue = LL.moveBack(LL.head.value.memory_value);
-     /* console.log('new');
-      console.log('LL is', LL.head.value);
-      console.log(LL.head.next.value);
-      console.log(LL.head.next.next.value);
-      console.log(LL.head.next.next.next.value);
-      //console.log(LL.head.next.next.next.next.value);*/
 
       //in the database, update total score and head in language
       await LanguageService.updateLang(req.app.get('db'), req.language.id, req.language.total_score, LL.head.value.id);
