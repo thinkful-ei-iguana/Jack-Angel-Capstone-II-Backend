@@ -182,7 +182,7 @@ describe('Language Endpoints', function () {
           .expect(200)
           .expect({
             nextWord: testLanguagesWords[1].original,
-            totalScore: -1,
+            totalScore: 0,
             wordCorrectCount: 0,
             wordIncorrectCount: 1,
             answer: testLanguagesWords[0].translation,
@@ -200,14 +200,14 @@ describe('Language Endpoints', function () {
           .post(`/api/language/guess`)
           .set('Authorization', helpers.makeAuthHeader(testUser))
           .send(incorrectPostBody)
-          /*.expect({
+        .expect({
             nextWord: testLanguagesWords[0].original,
-            totalScore: -2,
+            totalScore: 0,
             wordCorrectCount: 0,
             wordIncorrectCount: 1,
             answer: testLanguagesWords[1].translation,
             isCorrect: false
-          })*/
+          })
       })
     })
 

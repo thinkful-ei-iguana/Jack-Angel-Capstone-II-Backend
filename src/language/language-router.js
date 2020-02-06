@@ -91,7 +91,7 @@ languageRouter
       let correct = false;
       //if correct
 
-      if (LL.head.value.translation === guess) {
+      if (LL.head.value.translation.toLowerCase() === guess.toLowerCase()) {
         //double memory value and add one to correct count and total score
         LL.head.value.memory_value *= 2;
         LL.head.value.correct_count = LL.head.value.correct_count + 1;
@@ -104,6 +104,10 @@ languageRouter
         LL.head.value.memory_value = 1;
         LL.head.value.incorrect_count = LL.head.value.incorrect_count + 1;
         req.language.total_score -= 1;
+      }
+
+      if(req.language.total_score < 0){
+        req.language.total_score = 0;
       }
 
       //then move the node back an amount of spaces 
