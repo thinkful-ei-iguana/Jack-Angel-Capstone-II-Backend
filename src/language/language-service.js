@@ -66,7 +66,6 @@ const LanguageService = {
   },
 
   updateMoved(db, id, nextNode, correct_count, incorrect_count, memory_value){
-    //return db.from('word').select('*')
     let next = null;
     if(nextNode !== null){
       next = nextNode.value.id
