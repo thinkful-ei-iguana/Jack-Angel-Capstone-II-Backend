@@ -24,7 +24,7 @@ authRouter
       )
 
       if (!dbUser)
-        return res.status(418).json({
+        return res.status(422).json({
           error: 'Incorrect username or password',
         })
 
