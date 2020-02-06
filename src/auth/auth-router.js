@@ -13,7 +13,7 @@ authRouter
 
     for (const [key, value] of Object.entries(loginUser))
       if (value == null)
-        return res.status(400).json({
+        return res.status(418).json({
           error: `Missing '${key}' in request body`
         })
 
@@ -24,7 +24,7 @@ authRouter
       )
 
       if (!dbUser)
-        return res.status(400).json({
+        return res.status(418).json({
           error: 'Incorrect username or password',
         })
 
@@ -34,7 +34,7 @@ authRouter
       )
 
       if (!compareMatch)
-        return res.status(400).json({
+        return res.status(418).json({
           error: 'Incorrect username or password',
         })
 
