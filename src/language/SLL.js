@@ -63,7 +63,7 @@ class SLL {
     moveBack(spaces){
         let temp = this.head.value;
         let curr = this.head;
-        for(let i =0; i < spaces; i++){
+        for(let i =0; i < spaces; i++){    
             if(curr === null){
                 let returnVal = this.insertLast(temp);
                 this.head = this.head.next;

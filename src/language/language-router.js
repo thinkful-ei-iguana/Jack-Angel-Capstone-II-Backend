@@ -72,7 +72,7 @@ languageRouter
     let LL = new SLL;
     try {
 
-      let tempArr = await LanguageService.createSLL(req.app.get('db'), LL, req.language.head)
+      let tempArr = await LanguageService.createSLL2(req.app.get('db'), req.language.id)
       let val = req.language.head;
       for(let i =0; i < tempArr.length; i++){
         for(let j =0; j < tempArr.length; j++){

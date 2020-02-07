@@ -36,9 +36,9 @@ const LanguageService = {
       'original',
       'correct_count',
       'incorrect_count'
-      )
-      .where({id: head++})
-      .then(res =>{
+    )
+      .where({ id: head++ })
+      .then(res => {
         let ret = {
           wordCorrectCount: res[0].correct_count,
           nextWord: res[0].original,
@@ -47,31 +47,40 @@ const LanguageService = {
         return ret;
       })
 
-      
+
   },
 
-  createSLL(db, SLL, head){
+  createSLL(db, SLL, head) {
     return db.from('word')
-      .then(res =>{
-        return res; 
+      .then(res => {
+        return res;
       })
-    
+
   },
 
-  updateLang(db, id, score, head){
+  createSLL2(db, language_id) {
+    return db.from('word').where({ language_id: language_id })
+      .then(res => {
+        return res;
+      })
+
+  },
+
+
+  updateLang(db, id, score, head) {
     return db('language').where('id', id).update({
       total_score: score,
       head: head
     })
   },
 
-  updateMoved(db, id, nextNode, correct_count, incorrect_count, memory_value){
+  updateMoved(db, id, nextNode, correct_count, incorrect_count, memory_value) {
     let next = null;
-    if(nextNode !== null){
+    if (nextNode !== null) {
       next = nextNode.value.id
     }
 
-    return db('word').where({id: id}).update({
+    return db('word').where({ id: id }).update({
       correct_count: correct_count,
       incorrect_count: incorrect_count,
       memory_value: memory_value,
@@ -79,7 +88,7 @@ const LanguageService = {
     }, ['correct_count', 'incorrect_count', 'translation']);
   },
 
-  updatePrev(db, id, next){
+  updatePrev(db, id, next) {
     return db('word').where('id', id).update({
       next: next
     })
