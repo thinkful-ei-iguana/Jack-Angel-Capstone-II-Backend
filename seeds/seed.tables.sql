@@ -28,7 +28,7 @@ VALUES
   (5, 1, 'Cual', 'Which', 6),
   (6, 1, 'Como', 'How', 7),
   (7, 1, 'Adios', 'Goodbye', 8),
-  (8, 1, 'Nunca ', 'Never', 9),
+  (8, 1, 'Nunca', 'Never', 9),
   (9, 1, 'Claro', 'Of course', 10),
   (10, 1,'Siempre', 'Always', null);
 
