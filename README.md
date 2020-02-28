@@ -1,5 +1,7 @@
 # Spaced repetition API!
 
+team: Jack Pupel, Angel Alicea
+
 ## Local dev setup
 
 If using user `dunder-mifflin`:
